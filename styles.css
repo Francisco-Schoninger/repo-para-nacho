@@ -1,0 +1,69 @@
+body{
+    background-color: gray;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    width: 400px;
+    height: 400px;
+    background-color: darkgray;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container__animated-border{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    object-fit: auto;
+    position: relative;
+    border-radius: 30px;
+}
+
+.container__animated-border img{
+    display: none;
+}
+
+.container__animated-border:hover img{
+    animation-name: border-animation;
+    animation-duration: 0.4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    display: initial;
+}
+
+
+
+.container__square{
+    height: 180px;
+    width: 180px;
+    background-color: rgb(190, 82, 82);
+    border-bottom: 3px;
+    z-index: 1000;
+    position: absolute;
+    border-radius: 30px;
+    outline: 10px solid black;
+}
+
+.container__animated-border:hover ~ .container_square{
+    display: none;
+}
+
+@keyframes border-animation{
+    0%{
+        transform: rotate(0deg)
+    }
+
+    100%{
+        transform: rotate(360deg)
+    }
+}
